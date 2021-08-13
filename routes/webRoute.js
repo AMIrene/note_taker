@@ -5,7 +5,7 @@ const path = require('path');
 const router = express.Router();
 
 //add a route to get the html 
-router.get('/notes', (req, res) => {
+router.get('notes', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'notes.html'));
 })
 

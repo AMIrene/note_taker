@@ -15,10 +15,11 @@ app.use(express.json());
 
 app.use(express.json());
 
-//import web router
-app.use(webRouter);
 //import api router
 app.use(apiRouter);
+//import web router
+app.use(webRouter);
+
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "404.html"));

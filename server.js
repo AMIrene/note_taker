@@ -1,25 +1,3 @@
-// const express = require('express');
-
-// const app = express();
-
-
-// //port set up for heroku 
-// const PORT = process.env.PORT || '3001';
-
-// //middleware to enable express to take json and urlencoded data
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-
-// //load static assets in public folder
-// app.use(express.static('public'));
-
-
-// //server starter code
-// app.listen(PORT, () => {
-//     console.log('App is running on http://localhost:' + PORT);
-// })
-
-
 const express = require("express");
 const path = require("path");
 const webRouter = require('./routes/webRoute');

@@ -24,12 +24,12 @@ router.post("/api/notes", (req, res) => {
     res.json(noteList);
 })
 
-//delete note according to their tagged id.
+//delete note according to their assigned id.
 router.delete("/api/notes/:id", (req, res) => {
     let noteList = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
     let noteId = (req.params.id).toString();
 
-    //filter all notes that does not have matching id and saved them as a new array
+    //filter all notes that does not have matching id and add them as a new array
     //the matching array will be deleted
     noteList = noteList.filter(selected =>{
         return selected.id != noteId;

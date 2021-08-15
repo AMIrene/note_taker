@@ -10,6 +10,10 @@ This is a Note Taker application that can be used to write and save notes. This 
 1. Node Express.js
 2. Heroku
 
+## Installation
+
+Use npm install to run the application. 
+
 ## User Story
 
 ```

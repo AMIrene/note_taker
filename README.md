@@ -43,7 +43,9 @@ https://irenenoteapp.herokuapp.com/
 
 The following demo show the web application's appearance and functionality:
 
-![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./assets/hwork_demo_gif.gif)
+![Homepage demo.](./assets/home_page_demo.PNG) 
+![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./assets/notes_page_demo.PNG)
+
 
 ## Licenses
 

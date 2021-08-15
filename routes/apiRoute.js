@@ -1,10 +1,20 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
+const uuid = require('uuid');
 
 const router = express.Router();
 
 const dbPath = path.join(__dirname, "..", "db", "db.json"); 
+
+
+//route to read the `db.json` file and return all saved notes as JSON.
+router.get("/api/notes", (req, res) => {
+    let getNotes = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
+    res.json(getNotes);
+   
+});
+
 
 
 //req.body object allows you to access data in a string or JSON object from the client side and add it to the `db.json` file, 
@@ -26,6 +36,7 @@ router.post("/api/notes", (req, res) => {
 
 //delete note according to their assigned id.
 router.delete("/api/notes/:id", (req, res) => {
+  
     let noteList = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
     let noteId = (req.params.id).toString();
 

@@ -82,8 +82,12 @@ const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
-  const note = e.target;
-  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
+  const button = e.target;
+  const note = button.parentElement;
+  const noteData = note.getAttribute('data-note');
+  const noteDataJson = JSON.parse(noteData);
+  const noteId = noteDataJson.id;
+  // const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
 
   if (activeNote.id === noteId) {
     activeNote = {};

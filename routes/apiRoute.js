@@ -37,18 +37,18 @@ router.post("/api/notes", (req, res) => {
 //delete note according to their assigned id.
 router.delete("/api/notes/:id", (req, res) => {
   
-    let noteList = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
+    const notes = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
     let noteId = (req.params.id).toString();
 
     //filter all notes that does not have matching id and add them as a new array
     //the matching array will be deleted
-    noteList = noteList.filter(selected =>{
+    notes = notes.filter(selected =>{
         return selected.id != noteId;
     })
 
     //write the updated data to db.json and display the updated note
-    fs.writeFileSync(dbPath, "utf-8", JSON.stringify(noteList));
-    res.json(noteList);
+    fs.writeFileSync(dbPath, "utf-8", JSON.stringify(notes));
+    res.json(notes);
 });
 
 
